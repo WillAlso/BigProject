@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <!--
+    activity_linear_layout 用于控制布局中视图的位置
+    android:orientation 设置线性布局的方向 为horizontal或vertical
+    -->
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮1"/>
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮2"/>
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮3"/>
+</LinearLayout>
