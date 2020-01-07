@@ -4,18 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".search.SearchActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#FFF">
+        android:layout_height="60dp"
+        android:background="#FFF"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_plant"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:queryHint="搜索 植物" />
+            android:focusedByDefault="true"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            app:iconifiedByDefault="false"
+            app:queryHint="搜索 植物/文章/贴子" />
+
     </com.google.android.material.appbar.AppBarLayout>
+
+    <!--    https://www.jianshu.com/p/34dfcd546501-->
+    <co.lujun.androidtagview.TagContainerLayout
+        android:id="@+id/search_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="10dp"
+        app:container_enable_drag="false"
+        app:horizontal_interval="10dp"
+        app:tag_clickable="true"
+        app:tag_theme="pure_teal"
+        app:vertical_interval="10dp" />
 
 </LinearLayout>
