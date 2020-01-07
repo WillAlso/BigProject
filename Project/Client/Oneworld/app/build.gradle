@@ -23,6 +23,10 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -79,4 +83,16 @@ dependencies {
     // https://github.com/LuckSiege/PictureSelector
     implementation "com.github.LuckSiege.PictureSelector:picture_library:v2.4.3"
 
+    // butter
+    def butterknifeVersion = "10.2.1"
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    def rxjavaVersion = "2.0.1"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxjavaVersion"
+
+    def retrofitVersion = "2.6.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 }
