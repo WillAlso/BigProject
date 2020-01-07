@@ -12,9 +12,9 @@
         tools:layout="@layout/huajian_fragment"/>
 
     <fragment
-        android:id="@+id/navigation_artical"
-        android:name="com.whut.oneworld.Artical.ArticalFragment"
-        tools:layout="@layout/artical_fragment"/>
+        android:id="@+id/navigation_post"
+        android:name="com.whut.oneworld.post.PostFragment"
+        tools:layout="@layout/post_fragment"/>
 
     <fragment
         android:id="@+id/navigation_camera"

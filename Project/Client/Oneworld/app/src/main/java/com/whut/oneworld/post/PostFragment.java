@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import com.whut.oneworld.R;
 
-public class ArticalFragment extends Fragment {
+public class PostFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.artical_fragment, container, false);
+        View view = inflater.inflate(R.layout.post_fragment, container, false);
         return view;
     }
 }

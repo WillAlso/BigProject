@@ -15,7 +15,7 @@ public class ArticalFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.artical_fragment,container,false);
+        View view = inflater.inflate(R.layout.post_fragment,container,false);
         return  view;
     }
 }

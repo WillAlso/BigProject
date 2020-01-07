@@ -7,9 +7,9 @@
         android:title="花间" />
 
     <item
-        android:id="@+id/navigation_artical"
+        android:id="@+id/navigation_post"
         android:icon="@drawable/ic_artical_unselect"
-        android:title="文章" />
+        android:title="帖子" />
 
     <item
         android:id="@+id/navigation_camera"
