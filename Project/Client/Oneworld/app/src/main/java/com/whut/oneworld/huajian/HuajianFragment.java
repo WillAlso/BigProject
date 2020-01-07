@@ -21,8 +21,8 @@ import java.util.List;
 
 public class HuajianFragment extends Fragment {
 
-    HuajianViewModel huajianViewModel;
-    RecyclerView rv_huajian;
+    private HuajianViewModel huajianViewModel;
+    private RecyclerView rv_huajian;
 
     @Nullable
     @Override
