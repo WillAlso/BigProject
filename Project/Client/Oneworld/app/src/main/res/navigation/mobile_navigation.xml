@@ -15,5 +15,10 @@
         android:id="@+id/navigation_artical"
         android:name="com.whut.oneworld.Artical.ArticalFragment"
         tools:layout="@layout/artical_fragment"/>
+    <fragment
+        android:id="@+id/navigation_camera"
+        android:name="com.whut.oneworld.camera.CameraFragment"
+        tools:layout="@layout/camera_fragment"
+        ></fragment>
 
 </navigation>

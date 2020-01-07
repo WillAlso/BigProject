@@ -25,7 +25,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="labeled" 
         app:menu="@menu/bottom_nav_menu"
         ></com.google.android.material.bottomnavigation.BottomNavigationView>
 
