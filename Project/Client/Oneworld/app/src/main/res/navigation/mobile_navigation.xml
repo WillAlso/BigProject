@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_huajian">
+
+    <fragment
+        android:id="@+id/navigation_huajian"
+        android:name="com.whut.oneworld.huajian.HuajianFragment"
+        android:label="Huajian"
+        tools:layout="@layout/huajian_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_artical"
+        android:name="com.whut.oneworld.Artical.ArticalFragment"
+        tools:layout="@layout/artical_fragment"/>
+
+</navigation>
