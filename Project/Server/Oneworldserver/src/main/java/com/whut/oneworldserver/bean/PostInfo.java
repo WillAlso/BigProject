@@ -1,4 +1,4 @@
-package com.whut.oneworld.bean;
+package com.whut.oneworldserver.bean;
 
 import java.util.Date;
 
@@ -94,3 +94,4 @@ public class PostInfo {
         this.postDate = postDate;
     }
 }
+
