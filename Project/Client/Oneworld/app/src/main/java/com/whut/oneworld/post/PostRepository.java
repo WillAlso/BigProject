@@ -2,6 +2,7 @@ package com.whut.oneworld.post;
 
 import android.util.Log;
 
+import com.whut.oneworld.bean.PostCommentInfo;
 import com.whut.oneworld.bean.PostInfo;
 import com.whut.oneworld.util.RetrofitFactory;
 
@@ -55,4 +56,5 @@ public class PostRepository {
             }
         });
     }
+
 }

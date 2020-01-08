@@ -1,9 +1,12 @@
 package com.whut.oneworld.post;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,8 +16,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.whut.oneworld.MainActivity;
 import com.whut.oneworld.R;
 import com.whut.oneworld.bean.PostInfo;
+import com.whut.oneworld.post.postdetail.PostDeatilActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -37,11 +44,20 @@ public class PostFragment extends Fragment {
             }
         });
         rv_post = view.findViewById(R.id.rv_post);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-//        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         rv_post.setLayoutManager(layoutManager);
         PostAdapter postAdapter = new PostAdapter(getActivity(), postViewModel);
+        postAdapter.setClickListener(new PostAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClicked(View view, int postion) {
+                PostInfo postInfo = postViewModel.getPostInfos().getValue().get(postion);
+
+                EventBus.getDefault().postSticky(postInfo);
+                Intent intent = new Intent(getActivity(), PostDeatilActivity.class);
+                startActivity(intent);
+            }
+        });
+
         rv_post.setAdapter(postAdapter);
 
         return view;

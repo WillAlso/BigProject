@@ -1,5 +1,6 @@
 package com.whut.oneworldserver.dao;
 
+import com.whut.oneworldserver.bean.PostCommentInfo;
 import com.whut.oneworldserver.bean.PostInfo;
 
 import java.util.List;
@@ -10,4 +11,6 @@ import java.util.List;
 
 public interface PostDao {
     List<PostInfo> getAllPost();
+
+    List<PostCommentInfo> getPostComment(int postNum);
 }

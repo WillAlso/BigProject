@@ -1,5 +1,6 @@
 package com.whut.oneworldserver.service;
 
+import com.whut.oneworldserver.bean.PostCommentInfo;
 import com.whut.oneworldserver.bean.PostInfo;
 
 import java.util.List;
@@ -11,4 +12,6 @@ import java.util.List;
 
 public interface PostService {
     List<PostInfo> getAllPost();
+
+    List<PostCommentInfo> getPostComment(int postNum);
 }

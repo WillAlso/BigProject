@@ -97,6 +97,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     // send mail
-    implementation "com.jarvis:Sendmail:1.8.0"
-    compile "com.jarvis:PlantDetect:1.0.0"
+//    compile "com.jarvis:PlantDetect:1.1.0"
+
+    // 事务总线，用于碎片间通信
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
 }

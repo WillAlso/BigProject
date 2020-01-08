@@ -7,4 +7,8 @@
     <select id="getAllPost" resultType="com.whut.oneworldserver.bean.PostInfo">
         SELECT tb_post.*,tb_user.userName as author FROM tb_post join tb_user on tb_post.useId=tb_user.userId
     </select>
+
+    <select id="getPostComment" resultType="com.whut.oneworldserver.bean.PostCommentInfo">
+        SELECT * FROM tb_comments_post WHERE postNum=#{postNum}
+    </select>
 </mapper>

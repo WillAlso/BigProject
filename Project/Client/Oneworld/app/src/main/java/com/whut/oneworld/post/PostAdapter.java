@@ -27,6 +27,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
     // 持有ViewModel引用，使用它完成和Model成交互
     private PostViewModel postViewModel;
 
+    private OnItemClickListener clickListener;
+
+    public interface OnItemClickListener {
+        void onItemClicked(View view, int postion);
+    }
+
+    public void setClickListener(OnItemClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
 
     public class PostHolder extends RecyclerView.ViewHolder {
 
@@ -34,11 +43,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
         private TextView post_title;
         private TextView post_author;
 
-        public PostHolder(@NonNull View itemView) {
+        public PostHolder(@NonNull View itemView, final OnItemClickListener onItemClickListener) {
             super(itemView);
             post_image = itemView.findViewById(R.id.post_image);
             post_title = itemView.findViewById(R.id.post_title);
             post_author = itemView.findViewById(R.id.post_author);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onItemClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onItemClickListener.onItemClicked(v, position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -51,7 +71,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
     @Override
     public PostHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
-        return new PostHolder(view);
+        return new PostHolder(view, clickListener);
     }
 
     @Override
@@ -74,4 +94,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
         }
         return 0;
     }
+
+
 }

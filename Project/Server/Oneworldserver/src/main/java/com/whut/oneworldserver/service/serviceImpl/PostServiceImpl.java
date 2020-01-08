@@ -1,5 +1,6 @@
 package com.whut.oneworldserver.service.serviceImpl;
 
+import com.whut.oneworldserver.bean.PostCommentInfo;
 import com.whut.oneworldserver.bean.PostInfo;
 import com.whut.oneworldserver.dao.PostDao;
 import com.whut.oneworldserver.service.PostService;
@@ -24,5 +25,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostInfo> getAllPost() {
         return postDao.getAllPost();
+    }
+
+    @Override
+    public List<PostCommentInfo> getPostComment(int postNum) {
+        return postDao.getPostComment(postNum);
     }
 }
