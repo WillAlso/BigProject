@@ -95,4 +95,8 @@ dependencies {
     def retrofitVersion = "2.6.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    // send mail
+    implementation "com.jarvis:Sendmail:1.8.0"
+    compile "com.jarvis:PlantDetect:1.0.0"
 }

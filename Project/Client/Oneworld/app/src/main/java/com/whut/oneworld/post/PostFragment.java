@@ -26,7 +26,7 @@ public class PostFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.post_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_post, container, false);
 
         postViewModel = ViewModelProviders.of(getActivity()).get(PostViewModel.class);
         postViewModel.getAllPost();

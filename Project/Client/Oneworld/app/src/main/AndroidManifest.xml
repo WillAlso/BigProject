@@ -18,10 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PersonalActivity"></activity>
-        <activity android:name=".post.PostActivity"></activity>
+        <activity android:name=".camera.GalleryActivity"></activity>
+        <activity android:name=".PersonalActivity" />
+        <activity android:name=".post.PostActivity" />
         <activity android:name=".search.SearchActivity" />
-        <activity android:name=".camera.CameraActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/custom_file_paths" />
         </provider>
     </application>
 

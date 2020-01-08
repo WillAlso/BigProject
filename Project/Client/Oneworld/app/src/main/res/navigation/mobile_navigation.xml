@@ -9,27 +9,27 @@
         android:id="@+id/navigation_huajian"
         android:name="com.whut.oneworld.huajian.HuajianFragment"
         android:label="Huajian"
-        tools:layout="@layout/huajian_fragment"/>
+        tools:layout="@layout/fragment_huajian"/>
 
     <fragment
         android:id="@+id/navigation_post"
         android:name="com.whut.oneworld.post.PostFragment"
-        tools:layout="@layout/post_fragment"/>
+        tools:layout="@layout/fragment_post"/>
 
     <fragment
         android:id="@+id/navigation_camera"
         android:name="com.whut.oneworld.camera.CameraFragment"
-        tools:layout="@layout/camera_fragment"
+        tools:layout="@layout/fragment_camera"
         ></fragment>
 
     <fragment
         android:id="@+id/navigation_zhanlan"
         android:name="com.whut.oneworld.exhibition.ExhibitionFragment"
-        tools:layout="@layout/exhibition_fragment"></fragment>
+        tools:layout="@layout/fragment_exhibition"></fragment>
 
     <fragment
         android:id="@+id/navigation_me"
         android:name="com.whut.oneworld.me.MeFragment"
-        tools:layout="@layout/me_fragment"></fragment>
+        tools:layout="@layout/fragment_me"></fragment>
 
 </navigation>

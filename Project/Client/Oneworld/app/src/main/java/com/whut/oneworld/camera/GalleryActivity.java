@@ -1,8 +1,8 @@
 package com.whut.oneworld.camera;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
 
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
@@ -10,14 +10,14 @@ import com.luck.picture.lib.config.PictureMimeType;
 import com.whut.oneworld.R;
 import com.whut.oneworld.util.GlideEngine;
 
-public class CameraActivity extends AppCompatActivity {
+public class GalleryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera);
-
-        PictureSelector.create(CameraActivity.this)
+        getSupportActionBar().hide();
+        setContentView(R.layout.activity_gallery);
+        PictureSelector.create(GalleryActivity.this)
                 .openGallery(PictureMimeType.ofImage())
                 .isUseCustomCamera(false)
                 .isOriginalImageControl(true)
@@ -31,10 +31,5 @@ public class CameraActivity extends AppCompatActivity {
                 .isCamera(true)
                 .loadImageEngine(GlideEngine.createGlideEngine())
                 .forResult(PictureConfig.CHOOSE_REQUEST);
-
-//        PictureSelector.create(this)
-//                .openCamera(PictureMimeType.ofImage())
-//                .loadImageEngine(GlideEngine.createGlideEngine())
-//                .forResult(PictureConfig.REQUEST_CAMERA);
     }
 }

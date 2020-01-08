@@ -15,7 +15,7 @@ public class ExhibitionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.exhibition_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_exhibition, container, false);
         return view;
     }
 }
