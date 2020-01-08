@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.whut.oneworld.R;
 import com.whut.oneworld.bean.ArticalInfo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HuajianFragment extends Fragment {
@@ -27,7 +26,7 @@ public class HuajianFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.huajian_fragment,container,false);
+        View view = inflater.inflate(R.layout.fragment_huajian,container,false);
 
         huajianViewModel = ViewModelProviders.of(getActivity()).get(HuajianViewModel.class);
         huajianViewModel.getHotArtical();

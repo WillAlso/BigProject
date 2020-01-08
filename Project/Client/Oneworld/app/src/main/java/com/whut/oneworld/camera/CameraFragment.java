@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.luck.picture.lib.PictureSelector;
@@ -19,7 +18,7 @@ public class CameraFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.camera_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_camera, container, false);
         PictureSelector.create(CameraFragment.this)
                 .openCamera(PictureMimeType.ofImage())
                 .loadImageEngine(GlideEngine.createGlideEngine())
