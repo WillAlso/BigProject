@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 import com.whut.oneworld.bean.PostCommentInfo;
 import com.whut.oneworld.bean.PostInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostCommentViewModel extends ViewModel {
@@ -33,5 +34,13 @@ public class PostCommentViewModel extends ViewModel {
 
     public void getPostComment() {
         postCommentRepository.getPostComment(postInfo.getValue().getPostNum());
+    }
+
+    public PostCommentRepository getPostCommentRepository() {
+        return postCommentRepository;
+    }
+
+    public void setPostCommentRepository(PostCommentRepository postCommentRepository) {
+        this.postCommentRepository = postCommentRepository;
     }
 }
