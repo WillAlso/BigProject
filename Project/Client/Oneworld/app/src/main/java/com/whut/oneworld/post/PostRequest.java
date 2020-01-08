@@ -11,7 +11,7 @@ import retrofit2.http.GET;
  * 请求网络接口
  */
 
-public interface PostRequest {
+public interface  PostRequest {
 
     //Call<>中加上实体类，会自动使用Gson解析
     @GET("/getallpost")

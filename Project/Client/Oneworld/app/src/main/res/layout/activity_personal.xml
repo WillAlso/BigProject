@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PersonalActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/ic_personal_logo">
+    </ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OneWorld由9527小组于2020年1月7日参照”形色“开发；
+        此页面用于功能扩展使用，合作请联系：17639713924@163.com"
+        android:textStyle="italic"
+        android:textSize="35sp"
+        android:textColor="#9930DB4C"
+        android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </TextView>
+
+</LinearLayout>
