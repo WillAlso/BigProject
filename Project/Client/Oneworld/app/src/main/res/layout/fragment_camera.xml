@@ -27,11 +27,14 @@
                 <TextView
                     android:id="@+id/plant_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#009688"/>
                 <TextView
                     android:id="@+id/plant_score"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#E71111"/>
                 <ImageView
                     android:id="@+id/plant_image"
                     android:layout_width="match_parent"
@@ -39,7 +42,8 @@
                 <TextView
                     android:id="@+id/plant_desc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
