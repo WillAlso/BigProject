@@ -9,7 +9,8 @@
         android:id="@+id/sign_userid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="用户ID"/>
+        android:hint="用户ID"
+        android:layout_marginTop="150dp"/>
     <EditText
         android:id="@+id/sign_username"
         android:layout_width="match_parent"
@@ -39,13 +40,14 @@
             android:id="@+id/send_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发送"/>
+            android:text="发送"
+            android:textColor="#009688"/>
     </LinearLayout>
     <EditText
         android:id="@+id/sign_phonenum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="手机号"/>
+        android:hint="手机号"/>
     <EditText
         android:id="@+id/sign_signature"
         android:layout_width="match_parent"
@@ -55,5 +57,6 @@
         android:id="@+id/btn_sign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册"/>
+        android:text="注册"
+        android:textColor="#009688"/>
 </LinearLayout>
