@@ -15,6 +15,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.whut.oneworld.Artical.ArticalActivity;
+import com.whut.oneworld.Artical.ArticalFragment;
 import com.whut.oneworld.R;
 import com.whut.oneworld.bean.ArticalInfo;
 import com.whut.oneworld.search.SearchActivity;
@@ -26,6 +28,7 @@ public class HuajianFragment extends Fragment {
     private HuajianViewModel huajianViewModel;
     private RecyclerView rv_huajian;
     private ImageView image_search;
+    private ImageView image_artical;
 
     @Nullable
     @Override
@@ -52,6 +55,15 @@ public class HuajianFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        image_artical = view.findViewById(R.id.image_artical);
+        image_artical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ArticalActivity.class);
                 startActivity(intent);
             }
         });
