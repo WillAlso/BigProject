@@ -1,9 +1,11 @@
 package com.whut.oneworld.huajian;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.whut.oneworld.R;
 import com.whut.oneworld.bean.ArticalInfo;
+import com.whut.oneworld.search.SearchActivity;
 
 import java.util.List;
 
@@ -22,6 +25,7 @@ public class HuajianFragment extends Fragment {
 
     private HuajianViewModel huajianViewModel;
     private RecyclerView rv_huajian;
+    private ImageView image_search;
 
     @Nullable
     @Override
@@ -42,6 +46,15 @@ public class HuajianFragment extends Fragment {
         rv_huajian.setLayoutManager(layoutManager);
         HuajianAdapter adapter = new HuajianAdapter(getActivity(), huajianViewModel);
         rv_huajian.setAdapter(adapter);
+
+        image_search = view.findViewById(R.id.image_search);
+        image_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return  view;
     }
