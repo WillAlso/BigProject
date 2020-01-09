@@ -3,6 +3,7 @@ package com.whut.oneworld.post.postdetail;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.whut.oneworld.bean.PostCommentInfo;
 import com.whut.oneworld.post.PostRepository;
 import com.whut.oneworld.post.PostRequest;
@@ -52,6 +53,25 @@ public class PostCommentRepository {
             }
             @Override
             public void onFailure(Call<List<PostCommentInfo>> call, Throwable t) {
+            }
+        });
+    }
+
+    public void insertComment(PostCommentInfo postCommentInfo) {
+        PostRequest request = retrofit.create(PostRequest.class);
+
+        Call<String> call = request.insertComment((new Gson()).toJson(postCommentInfo));
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                List<PostCommentInfo> list = postCommentViewModel.getPostCommentInfos().getValue();
+                list.add(postCommentInfo);
+                postCommentViewModel.getPostCommentInfos().setValue(list);
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
             }
         });
     }

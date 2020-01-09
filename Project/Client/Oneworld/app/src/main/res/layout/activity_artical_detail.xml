@@ -23,9 +23,9 @@
         android:id="@+id/artical_detail_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <TextView
+    <WebView
         android:id="@+id/artical_detail_artical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>

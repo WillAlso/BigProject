@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.whut.oneworld.R;
 import com.whut.oneworld.bean.PostCommentInfo;
 import com.whut.oneworld.bean.PostInfo;
 import com.whut.oneworld.util.GlideEngine;
+import com.whut.oneworld.util.ServerInfo;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -61,7 +64,13 @@ public class PostDeatilActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(text)) {
                     Toast.makeText(getApplicationContext(), "评论不能为空", Toast.LENGTH_SHORT).show();
                 }
-
+                SharedPreferences sharedPreferences = getSharedPreferences(ServerInfo.MY_USERINFO, Context.MODE_PRIVATE);
+                String name = sharedPreferences.getString("userName", "匿名");
+                int postNum = postCommentViewModel.getPostInfo().getValue().getPostNum();
+                PostCommentInfo postCommentInfo = new PostCommentInfo(0, name, postNum, text);
+                insertComment(postCommentInfo);
+                post_edit_comment.setText("");
+                post_edit_comment.clearFocus();
             }
         });
 
@@ -80,7 +89,6 @@ public class PostDeatilActivity extends AppCompatActivity {
         postCommentViewModel.getPostCommentInfos().observe(this, new Observer<List<PostCommentInfo>>() {
             @Override
             public void onChanged(List<PostCommentInfo> postCommentInfos) {
-                Toast.makeText(getApplicationContext(), "得到", Toast.LENGTH_SHORT).show();
                 recyclerView.getAdapter().notifyDataSetChanged();
             }
         });
@@ -102,5 +110,9 @@ public class PostDeatilActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+
+    public void insertComment(PostCommentInfo postCommentInfo) {
+        postCommentViewModel.insertComment(postCommentInfo);
     }
 }

@@ -31,4 +31,9 @@ public class PostServiceImpl implements PostService {
     public List<PostCommentInfo> getPostComment(int postNum) {
         return postDao.getPostComment(postNum);
     }
+
+    @Override
+    public void insertComment(PostCommentInfo postCommentInfo) {
+        postDao.insertComment(postCommentInfo);
+    }
 }

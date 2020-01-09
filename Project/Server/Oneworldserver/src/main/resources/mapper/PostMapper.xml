@@ -11,4 +11,8 @@
     <select id="getPostComment" resultType="com.whut.oneworldserver.bean.PostCommentInfo">
         SELECT * FROM tb_comments_post WHERE postNum=#{postNum}
     </select>
+
+    <select id="insertComment" parameterType="com.whut.oneworldserver.bean.PostCommentInfo">
+        INSERT INTO tb_comments_post VALUES(#{postCommentInfo.commentNum}, #{postCommentInfo.userName}, #{postCommentInfo.postNum}, #{postCommentInfo.comment})
+    </select>
 </mapper>

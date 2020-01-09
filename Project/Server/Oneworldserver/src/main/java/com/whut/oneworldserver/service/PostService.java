@@ -14,4 +14,6 @@ public interface PostService {
     List<PostInfo> getAllPost();
 
     List<PostCommentInfo> getPostComment(int postNum);
+
+    void insertComment(PostCommentInfo postCommentInfo);
 }

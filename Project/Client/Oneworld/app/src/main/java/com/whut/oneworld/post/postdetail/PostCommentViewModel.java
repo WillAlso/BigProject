@@ -43,4 +43,8 @@ public class PostCommentViewModel extends ViewModel {
     public void setPostCommentRepository(PostCommentRepository postCommentRepository) {
         this.postCommentRepository = postCommentRepository;
     }
+
+    public void insertComment(PostCommentInfo postCommentInfo) {
+        postCommentRepository.insertComment(postCommentInfo);
+    }
 }

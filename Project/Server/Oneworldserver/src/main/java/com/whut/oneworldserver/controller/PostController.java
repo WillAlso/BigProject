@@ -59,4 +59,17 @@ public class PostController {
         }
     }
 
+    @RequestMapping(value = "/insertcomment",  produces = "application/json; charset=utf-8", method = RequestMethod.POST)
+    public void insertPostComment(@RequestParam("info") String info, HttpServletResponse response) {
+        PostCommentInfo postCommentInfo = new Gson().fromJson(info, PostCommentInfo.class);
+        System.out.println(postCommentInfo);
+        try (PrintWriter printWriter = response.getWriter();) {
+            postService.insertComment(postCommentInfo);
+            printWriter.print("1");
+            printWriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

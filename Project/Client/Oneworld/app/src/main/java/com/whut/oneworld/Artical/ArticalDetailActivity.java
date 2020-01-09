@@ -3,6 +3,7 @@ package com.whut.oneworld.Artical;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ public class ArticalDetailActivity extends AppCompatActivity {
     private TextView artical_detail_author;
     private TextView artical_detail_title;
     private TextView artical_detail_description;
-    private TextView artical_detail_artical;//文章文字内容
+    private WebView artical_detail_artical;//文章文字内容
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class ArticalDetailActivity extends AppCompatActivity {
         artical_detail_description.setText(articalInfo.getDescription());
         artical_detail_author.setText(articalInfo.getAuthor());
         //加载文章,
-
+        artical_detail_artical.loadUrl(articalInfo.getArticalUrl());
     }
 
     @Override

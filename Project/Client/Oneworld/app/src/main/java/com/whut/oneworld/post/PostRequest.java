@@ -24,4 +24,8 @@ public interface  PostRequest {
     @POST("/getpostcomment")
     @FormUrlEncoded
     Call<List<PostCommentInfo>> getPostComment(@Field("postNum") int postNum);
+
+    @POST("/insertcomment")
+    @FormUrlEncoded
+    Call<String> insertComment(@Field("info") String info);
 }
