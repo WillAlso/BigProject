@@ -18,6 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Artical.ArticalDetailActivity"></activity>
+        <activity android:name=".Artical.ArticalActivity" />
         <activity android:name=".exhibition.exhibitiondetail.ExhibitionDetailActivity"></activity>
         <activity android:name=".post.postdetail.PostDeatilActivity" />
         <activity android:name=".login.LoginActivity">
