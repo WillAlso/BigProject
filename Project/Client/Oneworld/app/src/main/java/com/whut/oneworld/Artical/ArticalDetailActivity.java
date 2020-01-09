@@ -28,20 +28,20 @@ public class ArticalDetailActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_artical_detail);
 
-        artical_detail_image = findViewById(R.id.artical_detail_image);
-        artical_detail_title = findViewById(R.id.artical_detail_title);
-        artical_detail_description = findViewById(R.id.artical_detail_description);
-        artical_detail_author = findViewById(R.id.artical_detail_author);
+//        artical_detail_image = findViewById(R.id.artical_detail_image);
+//        artical_detail_title = findViewById(R.id.artical_detail_title);
+//        artical_detail_description = findViewById(R.id.artical_detail_description);
+//        artical_detail_author = findViewById(R.id.artical_detail_author);
         artical_detail_artical = findViewById(R.id.artical_detail_artical);
 
         EventBus.getDefault().register(this);
     }
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
     public void onEventArtical(ArticalInfo articalInfo) {
-        GlideEngine.createGlideEngine().loadImage(getApplicationContext(), articalInfo.getImageUrl(), artical_detail_image);
-        artical_detail_title.setText(articalInfo.getTitle());
-        artical_detail_description.setText(articalInfo.getDescription());
-        artical_detail_author.setText(articalInfo.getAuthor());
+//        GlideEngine.createGlideEngine().loadImage(getApplicationContext(), articalInfo.getImageUrl(), artical_detail_image);
+//        artical_detail_title.setText(articalInfo.getTitle());
+//        artical_detail_description.setText(articalInfo.getDescription());
+//        artical_detail_author.setText(articalInfo.getAuthor());
         //加载文章,
         artical_detail_artical.loadUrl(articalInfo.getArticalUrl());
     }

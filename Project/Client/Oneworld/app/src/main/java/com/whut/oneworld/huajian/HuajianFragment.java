@@ -20,7 +20,12 @@ import com.whut.oneworld.Artical.ArticalFragment;
 import com.whut.oneworld.R;
 import com.whut.oneworld.bean.ArticalInfo;
 import com.whut.oneworld.search.SearchActivity;
+import com.whut.oneworld.util.GlideImageLoader;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.loader.ImageLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HuajianFragment extends Fragment {
@@ -29,6 +34,7 @@ public class HuajianFragment extends Fragment {
     private RecyclerView rv_huajian;
     private ImageView image_search;
     private ImageView image_artical;
+    private Banner banner;
 
     @Nullable
     @Override
@@ -43,6 +49,19 @@ public class HuajianFragment extends Fragment {
                 rv_huajian.getAdapter().notifyDataSetChanged();
             }
         });
+
+        banner = view.findViewById(R.id.ad_banner);
+        banner.setImageLoader(new GlideImageLoader());
+        banner.setDelayTime(3000);
+        banner.isAutoPlay(true);
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
+        List<String> urls = new ArrayList<>();
+        urls.add("http://photo.youngfool.top:81/articalcoverimage/test01.jpg");
+        urls.add("http://photo.youngfool.top:81/articalcoverimage/test02.jpg");
+        urls.add("http://photo.youngfool.top:81/articalcoverimage/test05.jpg");
+        urls.add("http://photo.youngfool.top:81/articalcoverimage/test11.jpg");
+        banner.setImages(urls);
+        banner.start();
 
         rv_huajian = view.findViewById(R.id.rv_huajian_artical);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());

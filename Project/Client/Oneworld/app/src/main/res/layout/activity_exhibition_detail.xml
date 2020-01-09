@@ -40,8 +40,22 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/exhibition_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="评论区"
+                android:layout_marginLeft="10dp"
+                android:textSize="10sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="#000"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/exhibition_detail_comment"
                 android:layout_width="match_parent"

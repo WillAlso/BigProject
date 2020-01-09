@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="用户ID"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="130dp"/>
     <EditText
         android:id="@+id/sign_username"
         android:layout_width="match_parent"
