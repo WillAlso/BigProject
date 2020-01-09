@@ -10,11 +10,15 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.whut.oneworld.R;
+import com.whut.oneworld.bean.detectbean.DetectBean;
+import com.whut.oneworld.bean.detectbean.Value;
+import com.whut.oneworld.bean.detectbean.ValueInfo;
 import com.whut.oneworld.util.GlideEngine;
 
 import java.util.List;
@@ -28,7 +32,11 @@ public class GalleryActivity extends AppCompatActivity {
 
     private LocalMedia localMedia = null;
     private ImageView gallery_plant_image;
-    private TextView gallery_plant_info;
+
+    private ImageView gallery_image;
+    private TextView  gallery_name;
+    private TextView  gallery_score;
+    private TextView  gallery_desc;
 
     private CameraViewModel cameraViewModel;
     private Observer<String> observer;
@@ -40,7 +48,10 @@ public class GalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gallery);
 
         gallery_plant_image = findViewById(R.id.gallery_plant_image);
-        gallery_plant_info = findViewById(R.id.gallery_plant_info);
+        gallery_image = findViewById(R.id.gallery_image);
+        gallery_name = findViewById(R.id.gallery_name);
+        gallery_score = findViewById(R.id.gallery_score);
+        gallery_desc = findViewById(R.id.gallery_desc);
 
         cameraViewModel = ViewModelProviders.of(this).get(CameraViewModel.class);
 
@@ -52,8 +63,19 @@ public class GalleryActivity extends AppCompatActivity {
 
             @Override
             public void onNext(String value) {
-                Log.d("MAINTHREAD", value);
-                gallery_plant_info.setText(value);
+                Gson gson = new Gson();
+                DetectBean detectBean = gson.fromJson(value, DetectBean.class);
+                Value t = detectBean.getNameValuePairs().getResult().getValues().get(0);
+                ValueInfo valueInfo = t.getNameValuePairs();
+                String plantName = valueInfo.getName();
+                String plantScore = String.valueOf(valueInfo.getScore());
+                String plantImage = valueInfo.getBaike_info().getNameValuePairs().getImage_url();
+                String plantDesc = valueInfo.getBaike_info().getNameValuePairs().getDescription();
+
+                GlideEngine.createGlideEngine().loadImage(getApplicationContext(), plantImage, gallery_image);
+                gallery_name.setText("植物名：" + plantName);
+                gallery_score.setText("可信度：" + plantScore);
+                gallery_desc.setText("描述：" + plantDesc);
             }
 
             @Override

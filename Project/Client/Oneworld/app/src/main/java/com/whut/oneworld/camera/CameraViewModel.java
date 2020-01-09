@@ -34,10 +34,10 @@ public class CameraViewModel extends ViewModel {
             @Override
             public void run() {
                 JImageClassify jImageClassify = JImageClassify.getInstance();
-                JSONObject jsonObject = jImageClassify.plantDetectByImagePath(imagePath);
+                JSONObject jsonObject = jImageClassify.plantDetectByImagePath(imagePath, 1);
                 Gson gson = new Gson();
                 String result = gson.toJson(jsonObject);
-                Log.d("PLANTDETECT", jsonObject.toString());
+                Log.d("TESTNOW","\n" +  result + "\n");
                 observable = Observable.create(new ObservableOnSubscribe<String>() {
                     @Override
                     public void subscribe(ObservableEmitter<String> e) throws Exception {
