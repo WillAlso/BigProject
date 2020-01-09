@@ -18,20 +18,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".exhibition.exhibitiondetail.ExhibitionDetailActivity"></activity>
         <activity android:name=".post.postdetail.PostDeatilActivity" />
         <activity android:name=".camera.GalleryActivity" />
         <activity android:name=".PersonalActivity" />
         <activity android:name=".post.PostActivity" />
-        <activity android:name=".search.SearchActivity">
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
-
         </activity>
 
         <provider

@@ -1,5 +1,6 @@
 package com.whut.oneworld.exhibition;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,9 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.whut.oneworld.R;
 import com.whut.oneworld.bean.ExhibitionInfo;
+import com.whut.oneworld.exhibition.exhibitiondetail.ExhibitionDetailActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -37,6 +41,15 @@ public class ExhibitionFragment extends Fragment {
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         rv_exhibition.setLayoutManager(layoutManager);
         ExhibitionAdapter exhibitionAdapter = new ExhibitionAdapter(getActivity(), exhibitionViewModel);
+        exhibitionAdapter.setClickListener(new ExhibitionAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClicked(View view, int position) {
+                ExhibitionInfo exhibitionInfo = exhibitionViewModel.getExhibitionInfos().getValue().get(position);
+                EventBus.getDefault().postSticky(exhibitionInfo);
+                Intent intent = new Intent(getActivity(), ExhibitionDetailActivity.class);
+                startActivity(intent);
+            }
+        });
         rv_exhibition.setAdapter(exhibitionAdapter);
         return view;
     }
