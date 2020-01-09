@@ -33,7 +33,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
         void onItemClicked(View view, int postion);
     }
 
-    public void setClickListener(OnItemClickListener clickListener) {
+    public void  setClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 

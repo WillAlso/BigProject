@@ -1,5 +1,6 @@
 package com.whut.oneworldserver.service.serviceImpl;
 
+import com.whut.oneworldserver.bean.ExhibitionCommentInfo;
 import com.whut.oneworldserver.bean.ExhibitionInfo;
 import com.whut.oneworldserver.dao.ExhibitionDao;
 import com.whut.oneworldserver.service.ExhibitionService;
@@ -18,4 +19,7 @@ public class ExhibitionServiceImpl implements ExhibitionService {
     public List<ExhibitionInfo> getAllExhibition() {
         return exhibitionDao.getAllExhibition();
     }
+
+    @Override
+    public List<ExhibitionCommentInfo> getExhibitionComment(int exhibitiontNum) {return exhibitionDao.getExhibitionComment(exhibitiontNum);}
 }

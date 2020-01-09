@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".post.postdetail.PostDeatilActivity"></activity>
+        <activity android:name=".exhibition.exhibitiondetail.ExhibitionDetailActivity"></activity>
+        <activity android:name=".post.postdetail.PostDeatilActivity" />
         <activity android:name=".camera.GalleryActivity" />
         <activity android:name=".PersonalActivity" />
         <activity android:name=".post.PostActivity" />

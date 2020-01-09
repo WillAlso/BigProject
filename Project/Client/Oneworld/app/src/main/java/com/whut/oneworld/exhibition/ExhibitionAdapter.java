@@ -20,16 +20,36 @@ public class ExhibitionAdapter extends RecyclerView.Adapter<ExhibitionAdapter.Ex
     private final Context context;
     private ExhibitionViewModel exhibitionViewModel;
 
+    private OnItemClickListener clickListener;
+    public interface OnItemClickListener {
+        void onItemClicked(View view, int position);
+    }
+    public void setClickListener(OnItemClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
     public class ExhibitionHolder extends RecyclerView.ViewHolder {
         private ImageView exhibition_image;
         private TextView exhibition_title;
         private TextView exhibition_description;
 
-        public ExhibitionHolder(@NonNull View itemView) {
+        public ExhibitionHolder(@NonNull View itemView, final OnItemClickListener onItemClickListener) {
             super(itemView);
             exhibition_image = itemView.findViewById(R.id.exhibition_image);
             exhibition_title = itemView.findViewById(R.id.exhibition_title);
             exhibition_description = itemView.findViewById(R.id.exhibition_description);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(onItemClickListener != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            onItemClickListener.onItemClicked(v,position);
+                        }
+                    }
+
+                }
+            });
         }
     }
 
@@ -42,7 +62,7 @@ public class ExhibitionAdapter extends RecyclerView.Adapter<ExhibitionAdapter.Ex
     @Override
     public ExhibitionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_exhibition, parent, false);
-        return new ExhibitionHolder(view);
+        return new ExhibitionHolder(view,clickListener);
     }
 
     @Override
