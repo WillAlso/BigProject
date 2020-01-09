@@ -4,4 +4,8 @@
     <select id="getAllExhibition" resultType="com.whut.oneworldserver.bean.ExhibitionInfo">
         SELECT * FROM tb_exhibition
     </select>
+
+    <select id="getExhibitionComment" resultType="com.whut.oneworldserver.bean.ExhibitionCommentInfo">
+        SELECT * FROM tb_comments_exhibition WHERE exhibitionNum=#{exhibitionNum}
+    </select>
 </mapper>

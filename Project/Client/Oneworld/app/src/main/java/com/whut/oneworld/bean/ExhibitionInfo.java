@@ -1,14 +1,14 @@
 package com.whut.oneworld.bean;
 
 public class ExhibitionInfo {
-    private int postNum;
+    private int exhibitionNum;
     private String title;
     private String description;
     private String imageUrl;
     private int popularity;
 
-    public ExhibitionInfo(int postNum, String title, String description, String imageUrl, int popularity) {
-        this.postNum = postNum;
+    public ExhibitionInfo(int exhibitionNum, String title, String description, String imageUrl, int popularity) {
+        this.exhibitionNum = exhibitionNum;
         this.title = title;
         this.description = description;
         this.imageUrl = imageUrl;
@@ -18,12 +18,12 @@ public class ExhibitionInfo {
     public ExhibitionInfo() {
     }
 
-    public int getPostNum() {
-        return postNum;
+    public int getExhibitionNum() {
+        return exhibitionNum;
     }
 
-    public void setPostNum(int postNum) {
-        this.postNum = postNum;
+    public void setExhibitionNum(int exhibitionNum) {
+        this.exhibitionNum = exhibitionNum;
     }
 
     public String getTitle() {
@@ -61,7 +61,7 @@ public class ExhibitionInfo {
     @Override
     public String toString() {
         return "ExhibitionInfo{" +
-                "postNum=" + postNum +
+                "exhibition=" + exhibitionNum +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
