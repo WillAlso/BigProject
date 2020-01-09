@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -44,6 +45,7 @@ public class PostFragment extends Fragment {
             }
         });
         rv_post = view.findViewById(R.id.rv_post);
+
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         rv_post.setLayoutManager(layoutManager);
         PostAdapter postAdapter = new PostAdapter(getActivity(), postViewModel);

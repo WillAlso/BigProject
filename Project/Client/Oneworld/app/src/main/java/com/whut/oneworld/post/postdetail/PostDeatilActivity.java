@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +36,9 @@ public class PostDeatilActivity extends AppCompatActivity {
     private TextView post_detail_title;
     private TextView post_detail_author;
 
+    private EditText post_edit_comment;
+    private Button send_comment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -44,6 +51,19 @@ public class PostDeatilActivity extends AppCompatActivity {
         post_detail_title = findViewById(R.id.post_detail_title);
         post_detail_author = findViewById(R.id.post_detail_author);
         recyclerView = findViewById(R.id.post_detail_comment);
+        send_comment = findViewById(R.id.send_comment);
+        post_edit_comment = findViewById(R.id.post_edit_comment);
+
+        send_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = post_edit_comment.getText().toString();
+                if (TextUtils.isEmpty(text)) {
+                    Toast.makeText(getApplicationContext(), "评论不能为空", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
         postCommentViewModel = ViewModelProviders.of(this).get(PostCommentViewModel.class);
 

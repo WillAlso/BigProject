@@ -1,13 +1,28 @@
-package com.whut.oneworldserver.bean;
+package com.whut.oneworld.bean;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "user_table")
 public class UserInfo {
 
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "serialNum")
     private int serialNum;
+    @ColumnInfo(name = "userId")
     private String userId;
+    @ColumnInfo(name = "userName")
     private String userName;
+    @ColumnInfo(name = "passWord")
     private String passWord;
+    @ColumnInfo(name = "email")
     private String email;
+    @ColumnInfo(name = "phoneNum")
     private String phoneNum;
+    @ColumnInfo(name = "signature")
     private String signature;
 
     public UserInfo() {

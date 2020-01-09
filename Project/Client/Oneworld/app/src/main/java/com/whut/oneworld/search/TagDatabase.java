@@ -18,7 +18,7 @@ public abstract class TagDatabase extends RoomDatabase {
 
     private static volatile TagDatabase INSTANCE;
 
-    static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(2);
+    static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(4);
 
     static TagDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {

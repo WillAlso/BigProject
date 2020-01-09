@@ -20,17 +20,19 @@
         android:theme="@style/AppTheme">
         <activity android:name=".exhibition.exhibitiondetail.ExhibitionDetailActivity"></activity>
         <activity android:name=".post.postdetail.PostDeatilActivity" />
-        <activity android:name=".login.LoginActivity"/>
-        <activity android:name=".camera.GalleryActivity" />
-        <activity android:name=".PersonalActivity" />
-        <activity android:name=".post.PostActivity" />
-        <activity android:name=".search.SearchActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".camera.GalleryActivity" />
+        <activity android:name=".PersonalActivity" />
+        <activity android:name=".post.PostActivity" />
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
 
         <provider

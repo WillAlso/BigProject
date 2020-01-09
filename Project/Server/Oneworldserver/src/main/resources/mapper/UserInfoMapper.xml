@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.whut.oneworldserver.dao.UserInfoDao">
+    <select id="getUserByPhone" parameterType="java.lang.String" resultType="com.whut.oneworldserver.bean.UserInfo">
+        SELECT * FROM tb_user WHERE phoneNum=#{phoneNum} AND password=#{passWord}
+    </select>
+
+    <select id="getUserByUserId" parameterType="java.lang.String" resultType="com.whut.oneworldserver.bean.UserInfo">
+        SELECT * FROM tb_user WHERE userId=#{userId} AND password=#{passWord}
+    </select>
+
+    <select id="getUserByEmail" parameterType="java.lang.String" resultType="com.whut.oneworldserver.bean.UserInfo">
+        SELECT * FROM tb_user WHERE email=#{email} AND password=#{passWord}
+    </select>
+
+    <select id="getUserByPhoneExist" parameterType="java.lang.String" resultType="com.whut.oneworldserver.bean.UserInfo">
+        SELECT * FROM tb_user WHERE phoneNum=#{phoneNum}
+    </select>
+
+    <select id="getUserByUserIdExist" parameterType="java.lang.String" resultType="com.whut.oneworldserver.bean.UserInfo">
+        SELECT * FROM tb_user WHERE userId=#{userId}
+    </select>
+
+    <select id="getUserByEmailExist" parameterType="java.lang.String" resultType="com.whut.oneworldserver.bean.UserInfo">
+        SELECT * FROM tb_user WHERE email=#{email}
+    </select>
+
+
+    <insert id="insertUser" parameterType="java.lang.String">
+        INSERT INTO tb_user VALUES(0, #{userId}, #{userName}, #{passWord}, #{email}, #{phoneNum}, #{signature}, "imageurl")
+    </insert>
+</mapper>
