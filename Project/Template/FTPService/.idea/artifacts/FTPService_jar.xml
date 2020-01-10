@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FTPService:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FTPService_jar</output-path>
+    <root id="archive" name="FTPService.jar">
+      <element id="module-output" name="FTPService" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

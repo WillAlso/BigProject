@@ -23,15 +23,25 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //tb
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
 
     //material design UI lib
     def materialVersion = "1.0.0"
@@ -42,7 +52,7 @@ dependencies {
     implementation "androidx.coordinatorlayout:coordinatorlayout:$coordinatorlayoutVersion"
 
     //gson for json
-    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'com.google.code.gson:gson:2.8.5'
 
     // Room components
     def roomVersion = "2.2.1"
@@ -63,7 +73,39 @@ dependencies {
     def bannerVersion = "1.4.10"
     implementation "com.youth.banner:banner:$bannerVersion"
 
-    def glideVersion = "4.8.0"
+    // glide for load image url
+    def glideVersion = "4.10.0"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // tagview
+    implementation 'co.lujun:androidtagview:1.0.3'
+
+    // select photo
+
+    // https://github.com/LuckSiege/PictureSelector
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.4.3'
+
+    // butter
+    def butterknifeVersion = "10.2.1"
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    def rxjavaVersion = "2.0.1"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxjavaVersion"
+    def retrofitVersion = "2.6.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    // send mail
+
+    //    compile "com.jarvis:PlantDetect:1.1.0"
+
+    // 事务总线，用于碎片间通信
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    // 识别植物
+    implementation files('libs/PlantDetect.jar')
+
 }

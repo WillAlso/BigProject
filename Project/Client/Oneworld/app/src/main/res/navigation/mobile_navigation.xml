@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_huajian">
+
+    <fragment
+        android:id="@+id/navigation_huajian"
+        android:name="com.whut.oneworld.huajian.HuajianFragment"
+        android:label="Huajian"
+        tools:layout="@layout/fragment_huajian"/>
+
+    <fragment
+        android:id="@+id/navigation_post"
+        android:name="com.whut.oneworld.post.PostFragment"
+        tools:layout="@layout/fragment_post"/>
+
+    <fragment
+        android:id="@+id/navigation_camera"
+        android:name="com.whut.oneworld.camera.CameraFragment"
+        tools:layout="@layout/fragment_camera"
+        ></fragment>
+
+    <fragment
+        android:id="@+id/navigation_zhanlan"
+        android:name="com.whut.oneworld.exhibition.ExhibitionFragment"
+        tools:layout="@layout/fragment_exhibition"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_me"
+        android:name="com.whut.oneworld.me.MeFragment"
+        tools:layout="@layout/fragment_me"></fragment>
+
+</navigation>
