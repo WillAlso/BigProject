@@ -26,6 +26,7 @@ public class CameraViewModel extends ViewModel {
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(3);
 
+    // RxJava
     private Observable<String> observable;
 
 

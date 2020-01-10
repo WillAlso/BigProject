@@ -31,6 +31,8 @@ import java.util.List;
 public class HuajianFragment extends Fragment {
 
     private HuajianViewModel huajianViewModel;
+
+
     private RecyclerView rv_huajian;
     private ImageView image_search;
     private ImageView image_artical;
@@ -39,7 +41,7 @@ public class HuajianFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_huajian,container,false);
+        View view = inflater.inflate(R.layout.fragment_huajian, container, false);
 
         huajianViewModel = ViewModelProviders.of(getActivity()).get(HuajianViewModel.class);
         huajianViewModel.getHotArtical();
@@ -87,6 +89,6 @@ public class HuajianFragment extends Fragment {
             }
         });
 
-        return  view;
+        return view;
     }
 }

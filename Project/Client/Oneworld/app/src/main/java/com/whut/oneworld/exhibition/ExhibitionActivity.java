@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import com.whut.oneworld.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class ExhibitionActivity extends AppCompatActivity {
 
     @Override

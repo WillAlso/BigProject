@@ -44,6 +44,7 @@ public class ArticalActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(View view, int position) {
                 ArticalInfo articalInfo = articalViewModel.getArticalInfos().getValue().get(position);
+                //发送事件
                 EventBus.getDefault().postSticky(articalInfo);
                 Intent intent = new Intent(getApplication(), ArticalDetailActivity.class);
                 startActivity(intent);
