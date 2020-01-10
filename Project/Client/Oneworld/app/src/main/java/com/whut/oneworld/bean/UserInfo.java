@@ -25,9 +25,6 @@ public class UserInfo {
     @ColumnInfo(name = "signature")
     private String signature;
 
-    public UserInfo() {
-    }
-
     public UserInfo(int serialNum, String userId, String userName, String passWord, String email, String phoneNum, String signature) {
         this.serialNum = serialNum;
         this.userId = userId;
